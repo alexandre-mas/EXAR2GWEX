@@ -1311,14 +1311,14 @@ pdf.systematic.diagnostic.stations = function(f.main, # folder that will contain
     ############ 1-Day MAXIMA ############
     # at the stations
     plot.scatter.fun(obs=obs.mat, sim=sim.array, obs.date=obs.date, sim.date=sim.date, 
-                     funYear=max, ylab='Maxima [°C]', lab=colnames(obs.mat), cex.axis=my.cex.axis, xaxt='n',
+                     funYear=max, ylab='Maxima [Â°C]', lab=colnames(obs.mat), cex.axis=my.cex.axis, xaxt='n',
                      main='1-Day maxima',fillPage = T,col.box='red',na.action = na.omit)
    
     
     ############ 1-Day MINIMA ############
     # at the stations
     plot.scatter.fun(obs=obs.mat, sim=sim.array, obs.date=obs.date, sim.date=sim.date, 
-                     funYear=min, ylab='Minima [°C]', lab=colnames(obs.mat), cex.axis=my.cex.axis, xaxt='n',
+                     funYear=min, ylab='Minima [Â°C]', lab=colnames(obs.mat), cex.axis=my.cex.axis, xaxt='n',
                      main='1-Day minima',fillPage = T,col.box='red',na.action = na.omit)
     
     
@@ -1326,7 +1326,7 @@ pdf.systematic.diagnostic.stations = function(f.main, # folder that will contain
     myfun = function(x) mean(x,na.rm=T)
     # at the stations
     plot.daily.stats.by.month(obs=obs.mat, sim=sim.array, obs.date=obs.date, sim.date=sim.date, 
-                              type=myfun, ylab='Mean [°C]', lab=colnames(obs.mat), cex.axis=my.cex.axis, xaxt='n',
+                              type=myfun, ylab='Mean [Â°C]', lab=colnames(obs.mat), cex.axis=my.cex.axis, xaxt='n',
                               main='Monthly mean',fillPage = T,col.box='red')
   }
   
