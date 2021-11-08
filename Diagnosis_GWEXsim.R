@@ -93,12 +93,14 @@ array.sim[,,y] = mySim@sim[dd[y]:df[y],]
 }
 
 # plot
+pdf(file = "./Max.annu.3J.gr2.pdf", width = 8, height = 11, onefile = T, paper = "a4r")
 par(mfrow=c(2,3))
-plot.scatter.fun(obs = myObs@obs, sim = array.sim, obs.date =  myObs@date, sim.date =  mySim@date[1:365242], n.day.cumul = 1, lab = colnames(myObs@obs), n.fig.page = 6, main = "Annual 1day maxima")
-plot.scatter.fun(obs = myObs@obs, sim = array.sim, obs.date =  myObs@date, sim.date =  mySim@date[1:365242], n.day.cumul = 3, lab = colnames(myObs@obs), n.fig.page = 6, main = "Annual 1day maxima")
-plot.cdf.spell.length(obs = myObs@obs, sim = array.sim, obs.date =  myObs@date, sim.date =  mySim@date[1:365242], type="wet", obs.th = 0.1, sim.th = 0, lab = colnames(myObs@obs))
+plot.scatter.fun(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, sim.date =  mySim@date, n.day.cumul = 1, lab = colnames(myObs@obs), n.fig.page = 6, main = "Annual 1day maxima")
+plot.scatter.fun(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, sim.date =  mySim@date, n.day.cumul = 3, lab = colnames(myObs@obs), n.fig.page = 6, main = "Annual 3day maxima")
+plot.cdf.spell.length(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, sim.date =  mySim@date, type="wet", obs.th = 0.1, sim.th = 0, lab = colnames(myObs@obs))
+plot.cdf.spell.length(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, sim.date =  mySim@date, type="dry", obs.th = 0.1, sim.th = 0, lab = colnames(myObs@obs))
 
-
+dev.off()
 
 
 
