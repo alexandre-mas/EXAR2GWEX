@@ -93,7 +93,7 @@ array.sim[,,y] = mySim@sim[dd[y]:df[y],]
 }
 
 # plot
-pdf(file = "./Max.annu.3J.gr2.pdf", width = 8, height = 11, onefile = T, paper = "a4r")
+pdf(file = "./Max.annu.1J.gr4.pdf", width = 8, height = 11, onefile = T, paper = "a4r")
 par(mfrow=c(2,3))
 plot.scatter.fun(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, sim.date =  mySim@date, n.day.cumul = 1, lab = colnames(myObs@obs), n.fig.page = 6, main = "Annual 1day maxima")
 plot.scatter.fun(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, sim.date =  mySim@date, n.day.cumul = 3, lab = colnames(myObs@obs), n.fig.page = 6, main = "Annual 3day maxima")
@@ -103,5 +103,14 @@ plot.cdf.spell.length(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, 
 dev.off()
 
 
-
-
+pdf(file = "./Max.annu.3J.gr4.pdf", width = 8, height = 11, onefile = T, paper = "a4r")
+par(mfrow=c(2,3))
+plot.scatter.fun(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, sim.date =  mySim@date, n.day.cumul = 3, lab = colnames(myObs@obs), n.fig.page = 6, main = "Annual 3day maxima")
+dev.off()
+load("D:/Transfert/fit.gwex.gr3.th01lag2.Rdata")
+load("D:/Transfert/sim.gwex.gr3_1000years.10sim.RData")
+detach("package:GWEX", unload = TRUE)
+pdf(file = "./Max.annu.3J.gr3.pdf", width = 8, height = 11, onefile = T, paper = "a4r")
+par(mfrow=c(2,3))
+plot.scatter.fun(obs = myObs@obs, sim = mySim@sim, obs.date =  myObs@date, sim.date =  mySim@date, n.day.cumul = 3, lab = colnames(myObs@obs), n.fig.page = 6, main = "Annual 3day maxima")
+dev.off()
